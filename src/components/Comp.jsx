@@ -35,8 +35,26 @@ function Comp({ id, elType, text, x, y, fontSize = 16, fontWeight = 400, setSele
     const handleMouseMove = (e) => {
         if (active) {
             e.preventDefault();
-            setCurrentX(e.clientX - initialX)
-            setCurrentY(e.clientY - initialY)
+
+            if (currentX < 0) {
+                setCurrentX(0)
+            }
+            else if (e.target.clientWidth + currentX <= e.target.offsetParent.clientWidth)
+                setCurrentX(e.clientX - initialX)
+            else
+                setCurrentX(currentX - 1)
+
+            if (currentY < 0) {
+                setCurrentY(0)
+            }
+            else if (e.target.clientHeight + currentY <= e.target.offsetParent.clientHeight) {
+                setCurrentY(e.clientY - initialY)
+            } else {
+                setCurrentY(currentY - 1)
+            }
+
+
+            // console.log(e.target.clientWidth + currentX, e.target.offsetParent.clientWidth)
             setOffsetX(currentX)
             setOffsetY(currentY)
         }
