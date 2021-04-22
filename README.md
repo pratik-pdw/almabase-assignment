@@ -1,6 +1,7 @@
 ## Instructions to run the code
 
 - Download zip or clone this repository.
+- Once code is downloaded do `npm install` to install all the necessary dependencies
 - Do `npm start`  inside project directory to start the application. The application will start on [http://localhost:3000](http://localhost:3000)
 
 
@@ -49,7 +50,7 @@ The component is positioned using
 We then open the modal by passing it initial props i.e element Type and also x and y coordinates where the drop event had occurred.
 
 ### When Modal is closed
-When modal is closed we check the object returned by modal if it has an id of undefined that means component is rendered for first time and we add to `elementsOnCanvas` array. Else we update only the component that was changed.
+When modal is closed we check the object returned by modal if it has an id of undefined that means component is rendered for first time so an id is given and element is added to `elementsOnCanvas` array. Else we update only the component that was changed.
 
 
 ## Modal.jsx
