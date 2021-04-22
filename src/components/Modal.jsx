@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import Button from './Button'
+
 
 function Modal({ closeModal, setIsModalOpen, ...elProps }) {
     // console.log(elProps)
@@ -51,6 +51,8 @@ function Modal({ closeModal, setIsModalOpen, ...elProps }) {
                         <div className="form-group">
                             <label htmlFor="fontSize">Font Size</label>
                             <input value={fontSize}
+                                min={1}
+
                                 onChange={(e) => { setFontSize(e.target.value) }} name="fontSize" type="number" />
                         </div>
                         <div className="form-group">
